@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "erpcompras"
+  "defaultProject": "erpcompras",
+  "cli": {
+    "analytics": "24abfe91-f586-4068-a5dd-0960ac5353ca"
+  }
 }
