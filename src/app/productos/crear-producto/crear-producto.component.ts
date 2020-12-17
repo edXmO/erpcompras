@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductosService } from 'src/app/servicios/productos.service';
 
@@ -11,13 +11,14 @@ import { ProductosService } from 'src/app/servicios/productos.service';
 export class CrearProductoComponent implements OnInit {
 
   formProducto: any = {};
+  validacion: boolean = false;
 
   constructor(private productosService: ProductosService, 
               private router: Router) { }
 
   ngOnInit(): void {
     this.formProducto = new FormGroup({
-      nombre: new FormControl(''),
+      nombre: new FormControl('', [Validators.required]),
       sku: new FormControl(''),
       descripcion: new FormControl(''),
       precio: new FormControl(null),
@@ -42,6 +43,10 @@ export class CrearProductoComponent implements OnInit {
                               console.log(err);
                             }
                           )
+  }
+
+  showValidacion() {
+    this.validacion = true;
   }
 
 }

@@ -45,7 +45,7 @@ form {
             cursor: not-allowed;
         }
 
-        &.ng-invalid {
+        &.invalid {
             border: 1px solid $danger;
         }
 

@@ -25,4 +25,17 @@ export class ListadoProductosComponent implements OnInit {
                           )
   }
 
+  removeProducto(_id: string) {
+    this.productosService.deleteProducto(_id)
+                        .subscribe(
+                          (res: any) => {
+                            console.log(res);
+                          }, 
+                          (err: any) => {
+                            console.log(err)
+                          }
+                        )
+
+  }
+
 }

@@ -11,6 +11,7 @@ import { CrearProveedorComponent } from './proveedores/crear-proveedor/crear-pro
 import { ListadoProductosComponent } from './productos/listado-productos/listado-productos.component';
 import { CrearProductoComponent } from './productos/crear-producto/crear-producto.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditarProductoComponent } from './productos/editar-producto/editar-producto.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListadoProveedoresComponent,
     CrearProveedorComponent,
     ListadoProductosComponent,
-    CrearProductoComponent
+    CrearProductoComponent,
+    EditarProductoComponent
   ],
   imports: [
     BrowserModule,

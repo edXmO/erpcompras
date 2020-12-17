@@ -12,11 +12,20 @@
                 <th>Cod. sku</th>
                 <th>Nombre</th>
                 <th>Descripción</th>
+                <th></th>
             </tr>
             <tr *ngFor="let producto of productos">
                 <td>{{producto?.sku}}</td>
                 <td>{{producto?.nombre}}</td>
                 <td>{{producto?.descripcion}}</td>
+                <td>
+                    <button class="warning" routerLink="/editar-producto/{{producto._id}}">
+                        <img src="assets/edit.svg" alt="">
+                    </button>
+                    <button class="danger m-l-small" (click)="removeProducto(producto._id)">
+                        <img src="assets/trash.svg" alt="">
+                    </button>
+                </td>
             </tr>
         </table>
     </div>

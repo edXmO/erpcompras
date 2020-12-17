@@ -2,7 +2,7 @@
     <div class="card w-60">
         <div class="fila">
             <div class="col-100 titulo">
-                <h1>Nuevo producto</h1>
+                <h1>Editar producto</h1>
             </div>
         </div>
         <hr>
@@ -25,7 +25,7 @@
             <div class="fila">
                 <div class="col-100 pila">
                     <label for="sku">Código sku</label>
-                    <input type="text" id="sku" formControlName="sku">
+                    <input type="text" id="sku" formControlName="sku" readonly>
                 </div>
             </div>
             <div class="fila">
@@ -49,8 +49,8 @@
             <div class="fila">
                 <div class="col-100 botones">
                     <button type="button" class="outline" routerLink="/listado-productos">Cancelar</button>
-                    <button type="button" *ngIf="formProducto.invalid"  class="m-l-small" (click)="showValidacion()">Añadir</button>
-                    <button type="submit" *ngIf="formProducto.valid" class="m-l-small">Añadir</button>
+                    <button type="button" *ngIf="formProducto.invalid"  class="m-l-small" (click)="showValidacion()">Guardar cambios</button>
+                    <button type="submit" *ngIf="formProducto.valid" class="m-l-small">Guardar cambios</button>
                 </div>
             </div>
         </form>
