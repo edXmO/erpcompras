@@ -50,7 +50,10 @@
                 <div class="col-100 botones">
                     <button type="button" class="outline" routerLink="/listado-productos">Cancelar</button>
                     <button type="button" *ngIf="formProducto.invalid"  class="m-l-small" (click)="showValidacion()">Añadir</button>
-                    <button type="submit" *ngIf="formProducto.valid" class="m-l-small">Añadir</button>
+                    <button type="submit" *ngIf="formProducto.valid" class="m-l-small">
+                        <span *ngIf="enviando">Espere...</span>
+                        <span *ngIf="!enviando">Añadir</span> 
+                    </button>
                 </div>
             </div>
         </form>

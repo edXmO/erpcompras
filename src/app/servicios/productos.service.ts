@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductosService {
 
-    endPointProducto: string = 'http://localhost:8080/producto';
+    endPointProducto: string =   environment.endPoint + '/producto';
 
     constructor(private httpClient: HttpClient) { }
 

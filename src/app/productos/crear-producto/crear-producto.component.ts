@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MensajesService } from 'src/app/servicios/mensajes.service';
 import { ProductosService } from 'src/app/servicios/productos.service';
 
 @Component({
@@ -12,9 +13,11 @@ export class CrearProductoComponent implements OnInit {
 
   formProducto: any = {};
   validacion: boolean = false;
+  enviando: boolean = false;
 
   constructor(private productosService: ProductosService, 
-              private router: Router) { }
+              private router: Router,
+              private mensajesService: MensajesService) { }
 
   ngOnInit(): void {
     this.formProducto = new FormGroup({
@@ -27,6 +30,7 @@ export class CrearProductoComponent implements OnInit {
   }
 
   sendProducto() {
+    this.enviando = true;
      let producto: any = {
        nombre: this.formProducto.get('nombre').value,
        sku: this.formProducto.get('sku').value,
@@ -37,10 +41,13 @@ export class CrearProductoComponent implements OnInit {
      this.productosService.postProducto(producto)
                           .subscribe(
                             (res: any) => {
+                              this.mensajesService.setMensaje(res.message, 'success');
+                              this.enviando = false; // no haría falta porque navegamos
                               this.router.navigate(['/listado-productos']);
                             },
                             (err: any) => {
-                              console.log(err);
+                              this.enviando = false;
+                              this.mensajesService.setMensaje(err.error.message, 'danger');
                             }
                           )
   }

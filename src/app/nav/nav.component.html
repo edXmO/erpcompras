@@ -1,6 +1,15 @@
 <nav>
     <header>
         <h1>ERP Compras</h1>
+        <div class="mensaje"
+             [ngClass]="{
+                            'success': tipoMensaje === 'success',
+                            'warning': tipoMensaje === 'warning',
+                            'danger': tipoMensaje === 'danger'
+                        }"
+             *ngIf="texto?.length > 0  && showMensaje">
+            {{texto}}
+        </div>
         <img routerLink="/" src="assets/home-2.svg">
     </header>
 </nav>
