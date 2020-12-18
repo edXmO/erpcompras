@@ -29,6 +29,15 @@ export class ProductosService {
                             )
     }
 
+    getSearchProducto(termino: string) {
+      return this.httpClient.get(this.endPointProducto + '/search/' + termino)
+      .pipe(
+        map((res: any) => {
+          return res
+        })
+      )
+    }
+
     postProducto(producto: object) {
       return this.httpClient.post(this.endPointProducto, producto)
                             .pipe(

@@ -13,6 +13,7 @@ import { CrearProductoComponent } from './productos/crear-producto/crear-product
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditarProductoComponent } from './productos/editar-producto/editar-producto.component';
 import { ModalComponent } from './modal/modal.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ModalComponent } from './modal/modal.component';
     ListadoProductosComponent,
     CrearProductoComponent,
     EditarProductoComponent,
-    ModalComponent
+    ModalComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

@@ -2,12 +2,16 @@
     <div class="card">
         <div class="fila">
             <div class="col-100 titulo">
-                <h1>Listado de productos</h1>
+                <form class="buscador" [formGroup]="formSearch">
+                    <label><img src="assets/search.svg" (click)="showForm()"></label>
+                    <input #search type="search" placeholder="Nombre producto" formControlName="search">
+                </form>
                 <button routerLink="/crear-producto">Añadir producto</button>
             </div>
         </div>
         <hr>
-        <table class="clientes">
+        <app-spinner *ngIf="consultando"></app-spinner>
+        <table *ngIf="!consultando" class="clientes">
             <tr>
                 <th>Cod. sku</th>
                 <th>Nombre</th>
