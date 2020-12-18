@@ -1,0 +1,15 @@
+<div class="overlay">
+    <div class="modal">
+        <div class="fila space">
+            <span (click)="discardAccion()">x</span>
+        </div>
+        <hr>
+        <div class="fila modal-body">
+            {{texto}}
+        </div>
+        <div class="fila space modal-footer">
+            <button class="outline" (click)="discardAccion()">Cancelar</button>
+            <button class="m-l-small" (click)="confirmAccion()">Aceptar</button>
+        </div>
+    </div>
+</div>

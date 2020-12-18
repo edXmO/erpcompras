@@ -22,7 +22,7 @@
                     <button class="warning" routerLink="/editar-producto/{{producto._id}}">
                         <img src="assets/edit.svg" alt="">
                     </button>
-                    <button class="danger m-l-small" (click)="removeProducto(producto._id)">
+                    <button class="danger m-l-small" (click)="toggleModal(producto._id)">
                         <img src="assets/trash.svg" alt="">
                     </button>
                 </td>
@@ -30,3 +30,5 @@
         </table>
     </div>
 </div>
+<app-modal *ngIf="showModal" [texto]="'¿Está seguro de eliminar este producto?'"
+           (accion)="getAccion($event)"></app-modal>
